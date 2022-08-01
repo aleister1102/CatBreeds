@@ -5,7 +5,7 @@ function useFetch(url) {
 
     useEffect(() => {
         fetch(url)
-            .then((response)=>{
+            .then((response) => {
                 return response.json()
             })
             .then((data) => {

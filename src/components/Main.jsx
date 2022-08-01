@@ -1,37 +1,60 @@
-function Main({ cats }) {
-    console.log(cats)
+import '../animations/loading.scss'
+
+function Loading() {
+    console.log('Loading...')
     return (
-        <main>
-            <div className="cat-card">
+        <div className="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    )
+}
+
+function CatCards({ cats }) {
+    return cats.map((cat, index) => {
+        return (
+            <div key={index} className="cat-card">
                 <div className="cat-card-img">
                     <img
-                        src="https://nekos.best/api/v2/neko/0544.png"
-                        alt="Cat"
+                        src={
+                            cat.image
+                                ? cat.image.url
+                                : 'https://nekos.best/api/v2/neko/0471.png'
+                        }
+                        alt=""
                     />
                 </div>
                 <div className="cat-card-body">
-                    <h1>Abyssinian</h1>
-                    <strong>Egypt</strong>
+                    <h1>{cat.name}</h1>
+                    <strong>{cat.origin}</strong>
                     <p>
-                        <span>Temperament: </span>Active, Energetic,
-                        Independent, Intelligent, Gentle
+                        <span>Temperament: </span>
+                        {cat.temperament}
                     </p>
                     <p>
-                        <span>Life Span: </span>14 - 15 years
+                        <span>Life Span: </span>
+                        {cat.life_span} years
                     </p>
                     <p>
-                        <span>Weight: </span>3 - 5 Kg
+                        <span>Weight: </span>
+                        {cat.weight.metric} Kg
                     </p>
                     <p>
-                        <span>Description: <br /></span>The Abyssinian is easy to care
-                        for, and a joy to have in your home. They’re
-                        affectionate cats and love both people and other
-                        animals.
+                        <span>
+                            Description: <br />
+                        </span>
+                        {cat.description}
                     </p>
                 </div>
             </div>
-        </main>
-    )
+        )
+    })
+}
+
+function Main({ cats }) {
+    return <main>{cats.length ? <CatCards cats={cats} /> : <Loading />}</main>
 }
 
 export default Main
