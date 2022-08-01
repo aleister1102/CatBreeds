@@ -6,7 +6,7 @@ function Footer() {
             <p>Copyright©2020 30 Days Of React</p>
             <p>
                 Designed:
-                <a href="https://www.linkedin.com/in/asabeneh/">
+                <a href="https://www.linkedin.com/in/asabeneh/" target="blank">
                     Asabeneh Yetayeh
                 </a>
             </p>

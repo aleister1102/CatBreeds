@@ -15,6 +15,14 @@ html {
 $regular-text-size: 2.64rem;
 $primary-text-color: #283747;
 
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+
 header {
     width: 100%;
     height: 40vh;
@@ -26,8 +34,8 @@ header {
     color: $primary-text-color;
     background: linear-gradient(
         to right,
-        rgb(139, 85, 233, 0.8) 0%,
-        rgb(82, 113, 230, 0.9) 100%
+        rgba(139, 85, 233, 0.8) 0%,
+        rgba(82, 113, 230, 0.9) 100%
     );
 
     svg {
@@ -54,7 +62,7 @@ header {
         font-weight: 300;
         margin: 4px 0;
         margin-bottom: 12px;
-
+        text-align: center;
         color: #fff;
 
         strong {
@@ -97,8 +105,12 @@ main {
             color: $primary-text-color;
 
             h1 {
-                font-size: 2.8rem;
-                font-weight: 300;
+                font-size: 5rem;
+                color: #19c1ec;
+            }
+            strong {
+                font-size: 2.4rem;
+                font-weight: 500;
             }
             p {
                 font-weight: 300;
@@ -108,7 +120,16 @@ main {
                 color: #616161;
                 font-weight: 400;
             }
+
+            .cat-card-desc {
+                p {
+                    margin-top: 4px;
+                }
+            }
         }
+    }
+    .cat-card:hover {
+        box-shadow: 0 0 3px 2px #0000004d;
     }
 }
 

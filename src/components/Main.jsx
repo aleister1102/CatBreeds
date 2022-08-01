@@ -1,4 +1,4 @@
-import '../animations/loading.scss'
+import useFetch from '../hooks/useFetch'
 
 function Loading() {
     console.log('Loading...')
@@ -13,18 +13,13 @@ function Loading() {
 }
 
 function CatCards({ cats }) {
+    const fallbackImg = 'https://nekos.best/api/v2/neko/0314.png'
+
     return cats.map((cat, index) => {
         return (
             <div key={index} className="cat-card">
                 <div className="cat-card-img">
-                    <img
-                        src={
-                            cat.image
-                                ? cat.image.url
-                                : 'https://nekos.best/api/v2/neko/0471.png'
-                        }
-                        alt=""
-                    />
+                    <img src={cat.image ? cat.image.url : fallbackImg} alt="" />
                 </div>
                 <div className="cat-card-body">
                     <h1>{cat.name}</h1>
@@ -41,12 +36,12 @@ function CatCards({ cats }) {
                         <span>Weight: </span>
                         {cat.weight.metric} Kg
                     </p>
-                    <p>
+                    <div className="cat-card-desc">
                         <span>
                             Description: <br />
                         </span>
-                        {cat.description}
-                    </p>
+                        <p>{cat.description}</p>
+                    </div>
                 </div>
             </div>
         )
