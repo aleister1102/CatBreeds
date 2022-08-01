@@ -7,10 +7,10 @@ import '../styles/index.scss'
 function App() {
     const url = 'https://api.thecatapi.com/v1/breeds'
     const cats = useFetch(url)
-    
+
     return (
         <div className="App">
-            <Header />
+            <Header cats={cats} />
             <Main cats={cats} />
             <Footer />
         </div>

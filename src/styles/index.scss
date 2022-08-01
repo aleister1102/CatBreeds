@@ -26,7 +26,7 @@ header {
     color: $primary-text-color;
     background: linear-gradient(
         to right,
-        rgb(139, 85, 233, 0.9) 0%,
+        rgb(139, 85, 233, 0.8) 0%,
         rgb(82, 113, 230, 0.9) 100%
     );
 
@@ -47,6 +47,7 @@ header {
         font-size: $regular-text-size;
         font-weight: 300;
         margin: 4px 0;
+        color: #fff;
     }
     small {
         font-size: 1.8rem;
@@ -54,9 +55,12 @@ header {
         margin: 4px 0;
         margin-bottom: 12px;
 
+        color: #fff;
+
         strong {
             font-size: $regular-text-size;
             color: #61dbfb;
+            
         }
     }
 }
