@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,300italic,regular,italic,700,700italic,900,900italic');
+@import './mixins.scss';
 
 * {
     padding: 0;
@@ -7,8 +8,8 @@
     box-sizing: border-box;
 }
 html {
+    @include fontFam('Poppins');
     font-size: 62.5%;
-    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -16,20 +17,13 @@ $regular-text-size: 2.64rem;
 $primary-text-color: #283747;
 
 .App {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(column, space-between, center);
     min-height: 100vh;
 }
 
 header {
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(column);
+    @include size(100%, 40vh);
     margin-bottom: 50px;
     color: $primary-text-color;
     background: linear-gradient(
@@ -39,27 +33,22 @@ header {
     );
 
     svg {
-        $logo-size: 20px;
-        width: $logo-size;
-        height: $logo-size;
+        @include size(20px);
         margin: 8px 0;
     }
     h1 {
-        font-family: 'Merriweather', sans-serif;
+        @include fontFam('Merriweather');
+        @include font(4.2rem, 600);
         text-shadow: 2px 2px 0 #fff;
-        font-size: 4.2rem;
-        font-weight: 600;
         letter-spacing: 4px;
     }
     p {
-        font-size: $regular-text-size;
-        font-weight: 300;
+        @include font($regular-text-size, 300);
         margin: 4px 0;
         color: #fff;
     }
     small {
-        font-size: 1.8rem;
-        font-weight: 300;
+        @include font(1.8rem, 300);
         margin: 4px 0;
         margin-bottom: 12px;
         text-align: center;
@@ -73,10 +62,7 @@ header {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column);
     width: 60%;
     margin: auto;
 
@@ -89,9 +75,7 @@ main {
             overflow: hidden;
 
             img {
-                $cat-image-height: 800px;
-                width: 100%;
-                height: $cat-image-height;
+                @include size(100%, 800px);
                 transition: transform 1s ease;
             }
             img:hover {
@@ -109,8 +93,7 @@ main {
                 color: #19c1ec;
             }
             strong {
-                font-size: 2.4rem;
-                font-weight: 500;
+                @include font(2.4rem, 500);
             }
             p {
                 font-weight: 300;
@@ -134,15 +117,11 @@ main {
 }
 
 footer {
+    @include flex(column);
+    @include font(1.8rem, 300);
     width: 100%;
     margin-top: 40px;
     padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    font-weight: 300;
     letter-spacing: 1.25px;
     background-color: #d6d0f6;
 
@@ -158,9 +137,7 @@ footer {
         justify-content: flex-end;
 
         svg {
-            $arrow-size: 60px;
-            width: $arrow-size;
-            height: $arrow-size;
+            @include size(60px);
             margin: 4px;
         }
     }

@@ -1,6 +1,9 @@
-@media screen and (min-width: 740px) and (max-width: 1023px) {
+@import './mixins.scss';
+
+@include Tablet {
     main {
         width: 80%;
+
         .cat-card {
             .cat-card-img {
                 img {
@@ -19,17 +22,16 @@
     }
 }
 
-@media screen and (max-width: 739px) {
+@include Mobile {
     header {
         padding: 0 8px;
         margin-bottom: 12px;
 
-        h1 {
-            font-size: 1.6rem;
-        }
+        h1,
         p {
             font-size: 1.6rem;
         }
+
         small {
             font-size: 1.8rem;
         }
@@ -37,6 +39,7 @@
 
     main {
         width: 96%;
+
         .cat-card {
             .cat-card-img {
                 img {
@@ -46,6 +49,7 @@
             .cat-card-body {
                 padding: 16px;
                 font-size: 2rem;
+                
                 h1 {
                     font-size: 2.4rem;
                 }
@@ -59,11 +63,10 @@
     footer {
         text-align: center;
         padding: 16px;
+
         div {
             svg {
-                $arrow-size: 50px;
-                width: $arrow-size;
-                height: $arrow-size;
+                @include size(50px);
             }
         }
     }
