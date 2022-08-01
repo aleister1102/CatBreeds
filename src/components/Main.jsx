@@ -1,7 +1,6 @@
-import useFetch from '../hooks/useFetch'
+import { useEffect, useState } from 'react'
 
 function Loading() {
-    console.log('Loading...')
     return (
         <div className="lds-ring">
             <div></div>
@@ -12,7 +11,20 @@ function Loading() {
     )
 }
 
-function CatCards({ cats }) {
+function Origins({ origins }) {
+    return (
+        <div className="cat-origins">
+            {origins.map((origin, index) => (
+                <span key={index}>
+                    {origin[0]}({origin[1]})
+                </span>
+            ))}
+            <span>All</span>
+        </div>
+    )
+}
+
+function Cats({ cats }) {
     const fallbackImg = 'https://nekos.best/api/v2/neko/0314.png'
 
     return cats.map((cat, index) => {
@@ -49,7 +61,33 @@ function CatCards({ cats }) {
 }
 
 function Main({ cats }) {
-    return <main>{cats.length ? <CatCards cats={cats} /> : <Loading />}</main>
+    const [origins, setOrigins] = useState([])
+
+    useEffect(() => {
+        const catOrigins = cats.reduce((acc, cat) => {
+            if (acc[cat.origin]) acc[cat.origin] += 1
+            else acc[cat.origin] = 1
+            return acc
+        }, {})
+        const sortedOrigins = Object.entries(catOrigins).sort(
+            (a, b) => a[1] - b[1]
+        )
+
+        setOrigins(sortedOrigins)
+    }, [cats])
+
+    return (
+        <main>
+            {cats.length ? (
+                <>
+                    <Origins origins={origins} />
+                    <Cats cats={cats} />
+                </>
+            ) : (
+                <Loading />
+            )}
+        </main>
+    )
 }
 
 export default Main
