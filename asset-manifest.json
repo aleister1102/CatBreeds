@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cat_breeds/static/css/main.b7def668.css",
+    "main.js": "/cat_breeds/static/js/main.ea7eec5f.js",
+    "index.html": "/cat_breeds/index.html",
+    "main.b7def668.css.map": "/cat_breeds/static/css/main.b7def668.css.map",
+    "main.ea7eec5f.js.map": "/cat_breeds/static/js/main.ea7eec5f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7def668.css",
+    "static/js/main.ea7eec5f.js"
+  ]
+}
