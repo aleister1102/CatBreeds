@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { CatDescription } from './CatDescription'
 import { CatImage } from './CatImage'
 

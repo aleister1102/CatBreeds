@@ -1,5 +1,7 @@
-import { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
+
 import _ from 'lodash'
+
 import { Cats } from './Cats/Cats'
 import { Loading } from './Loading'
 import { Origins } from './Origins'

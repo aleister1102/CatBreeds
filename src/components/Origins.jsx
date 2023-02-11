@@ -1,3 +1,5 @@
+import React from 'react'
+
 function createOriginName(origin) {
     return `${origin[0]}${Number.isInteger(origin[1]) ? `(${origin[1]})` : ''}`
 }

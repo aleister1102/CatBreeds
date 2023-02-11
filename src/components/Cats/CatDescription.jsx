@@ -1,3 +1,5 @@
+import React from 'react'
+
 export function CatDescription({ description }) {
     return (
         <div className="cat-card-desc">

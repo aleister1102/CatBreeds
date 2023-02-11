@@ -1,3 +1,5 @@
+import React from 'react'
+
 export function CatImage({ image }) {
     const fallbackImg = 'https://nekos.best/api/v2/neko/0314.png';
 

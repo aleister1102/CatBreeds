@@ -1,5 +1,5 @@
+import React, { useEffect, useState } from 'react'
 import { IoLogoOctocat } from 'react-icons/io5'
-import { useEffect, useState } from 'react'
 
 function Header({ cats }) {
     const [avgWeight, setAvgWeight] = useState(0)
